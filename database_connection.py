@@ -1,6 +1,3 @@
-import sys
-sys.path.append("/opt/")
-
 import logging
 import urllib.parse
 from sqlalchemy import create_engine
