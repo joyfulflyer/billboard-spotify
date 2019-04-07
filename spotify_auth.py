@@ -3,7 +3,6 @@ from requests_oauthlib import OAuth2Session
 from requests.auth import HTTPBasicAuth
 from config import Config
 
-auth = get_auth_object()
 
 def get_auth_object():
     client_id = Config.spotify_client_id
@@ -11,7 +10,9 @@ def get_auth_object():
     auth = HTTPBasicAuth(client_id, client_secret)
     client = BackendApplicationClient(client_id=client_id)
     oauth = OAuth2Session(client=client)
-#    token = oauth.fetch_token(token_url='https://provider.com/oauth2/token', auth=auth)
+#    token = oauth.fetch_token(
+#        token_url='https://accounts.spotify.com/api/token', auth=auth)
     return oauth
 
 
+auth = get_auth_object()

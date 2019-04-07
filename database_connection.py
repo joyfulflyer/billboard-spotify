@@ -2,7 +2,8 @@ import logging
 import urllib.parse
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from base import Base
+from models.base import Base
+from config import Config as config
 
 
 logger = logging.getLogger(__name__)
@@ -27,3 +28,5 @@ def create_tables(Session):
     session = Session()
     Base.metadata.create_all(session.get_bind().engine)
     session.close()
+
+Session = connect(create_url_from_parts(config.db_username, config.db_password, config.db_host, config.db_name))
