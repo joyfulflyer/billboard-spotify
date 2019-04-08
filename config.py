@@ -14,4 +14,3 @@ class Config:
     def get_encoded_header_content(self):
         return base64.b64encode('b{}:{}'.format(
             spotify_client_id, spotify_client_secret))
-

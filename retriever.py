@@ -1,6 +1,7 @@
 import logging
 from models.chart import Chart
 from models.entry import Entry
+from models.song import Song
 from sqlalchemy import desc
 
 
